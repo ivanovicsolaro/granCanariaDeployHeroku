@@ -1,0 +1,16 @@
+#who-we-are-image {
+  height: 350px;
+  margin-top: 60px;
+}
+
+i {
+  color: #00d4a1;
+}
+
+p {
+  font-size: 0.9em;
+}
+
+.checks {
+  margin-left: 10px;
+}

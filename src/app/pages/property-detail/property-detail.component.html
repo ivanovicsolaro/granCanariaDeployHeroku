@@ -1,0 +1,141 @@
+<div class="overlay">
+  <div id="background-img-min" [style.backgroundImage]="'url('+ './assets/images/home.png' +')'"  alt="Background"></div>
+</div>
+
+
+<section class="property-detail">
+  <div class="container">
+    <div class="row">
+      <div class="custom-breadcrumb">
+        <span> <a routerLink="../../inicio"><i class="fa fa-home"></i>Inicio</a></span>
+        <span class="text-muted"> > Detalle Propiedad</span>
+      </div>
+    </div>
+
+    <!--Loading image start-->
+    <div *ngIf="loading" class="row" style="height: 100%; width: 100%">
+      <div style="margin: auto;" class="text-center">
+        <p><img style="width: 50px; margin: 0 auto;" [src]="'assets/images/loading.gif'">Cargando Información..</p>
+      </div>
+    </div>
+    <!--Loading image end-->
+
+    <div class="row" *ngIf="!loading && !property">
+      <div class="col-md-12 text-center">
+        <h1 class="property-not-found">Propiedad no encontrada</h1>
+      </div>
+    </div>
+
+    <!-- Properties details page start -->
+    <div class="row" *ngIf="!loading && property">
+      <!--Property gallery start-->
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-12">
+            <ngx-gallery [options]="galleryOptions"
+                         [images]="galleryImages"></ngx-gallery>
+          </div>
+        </div>
+        <!--Property gallery end-->
+
+
+        <!-- Features start -->
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-7 col-sm">
+              <h3>{{property.titulo}}</h3>
+            </div>
+            <div class="col-md-3 col-sm text-right">
+              <div class="badge">
+                <p class="no-margin">{{property.pesos}}</p>
+                <p class="no-margin">{{property.uf}}</p>
+              </div>
+            </div>
+          </div>
+          <h3>Características</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <p>
+                <i class="fa fa-th-large"></i>
+                {{property.sup_total}} m<sup>2</sup> de terreno
+              </p>
+              <p>
+                <i class="fa fa-bed"></i>
+                {{property.habitaciones}} Dormitorios
+              </p>             
+            </div>
+            <div class="col-md-4">
+              <p>
+                <i class="fa fa-car"></i>
+                {{property.garages}} Estacionamientos
+              </p>
+              <p>
+                <i class="fa fa-building"></i>
+                {{property.tipo}}
+              </p>             
+            </div>
+            <div class="col-md-4">
+              <p>
+                <i class="fa fa-bath"></i>
+                {{property.banios}} Baños
+              </p>
+              <p>
+                <i class="fa fa-user"></i>
+                {{property.captador}}
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Features end -->
+
+        <!-- Description start -->
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Descripción</h3>
+              <div class="text-justify" [innerHtml]="property.descripcion | html: 'html' "></div>
+            </div>
+          </div>
+        </div>
+        <!-- Description end -->
+
+        <!-- Location start -->
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Ubicación</h3>
+              <app-map [lat]="property.latitud" [lng]="property.longitud"></app-map>
+            </div>
+          </div>
+        </div>
+        <!-- Location end -->
+      </div>
+
+      <div class="col-md-4">
+        <section class="agent-info">
+          <h1>Astrid Barril</h1>
+          <p>Agente inmobiliario</p>
+          <hr>
+          <p><i class="fa fa-phone"></i> +569 9887 6717</p>
+          <p><i class="fa fa-envelope"></i> astrid@grancanariapropiedades.cl</p>
+
+          <div class="fb-share-button"><a style="color:white; text-decoration: none;" (click)="share()">
+                        <i class="fa fa-facebook-square" style="color: white !important;"></i>&nbsp;Compartir en Facebook
+
+                      </a>
+
+        </div>
+              </section>
+
+        <section class="form">
+          <p>¿Tienes alguna pregunta?</p>
+          <app-form-email></app-form-email>
+        </section>
+      </div>
+    </div>
+    <!-- Properties details page end -->
+  </div>
+
+</section>
+
+

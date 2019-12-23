@@ -1,0 +1,58 @@
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-footer {
+  background: #00D4A1;
+  color: white;
+}
+
+.card-title {
+  font-size: 0.9em;
+}
+
+img {
+  height: 275px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.location {
+  font-size: 0.75em;
+  max-height: 18px;
+}
+
+i {
+  color: #00d4a1;
+  margin-right: 3px;
+}
+
+.features {
+  font-size: 0.75em;
+  padding: 0;
+}
+
+.card-footer {
+  font-weight: bold;
+}
+
+.card {
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.card-title {
+  max-height: 17px;
+}
+
+.status-tag {
+  position: absolute;
+  margin: 15px;
+  background: red;
+  padding: 5px;
+  color: #ffffff;
+  font-weight: bold;
+}

@@ -1,0 +1,52 @@
+<div class="card" (click)="navigateToPropertyDetail(property)">
+  <span class="status-tag">{{property.operacion}}</span>
+  <img [src]="property?.thumb" [alt]="property.titulo" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{property.titulo}}</h5>
+    <div class="card-text text-center location">
+      <i class="fa fa-map-marker"></i>
+      {{property.ubicacion}}
+    </div>
+    <hr/>
+
+    <div class="container-fluid features">
+      <div class="row">
+        <div class="col-md-6">
+            <i class="fa fa-th-large"></i>
+            {{property.sup_total}} m<sup>2</sup> terreno
+        </div>
+        <div class="col-md-6">
+            <i class="fa fa-car"></i>
+            {{property.garages}} Estacionamientos
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <i class="fa fa-bed"></i>
+          {{property.habitaciones}} Dormitorios
+        </div>
+        <div class="col-md-6">
+          <i class="fa fa-bath"></i>
+          {{property.banios}} Baños
+        </div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-6">
+          <i class="fa fa-user"></i>
+          {{property.captador}}
+        </div>
+        <div class="col-md-6 text-right">
+          <i class="fa fa-map-marker"></i>
+          {{property.comuna}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-center">
+    <p class="no-margin">{{property.pesos}}</p>
+    <p class="no-margin">{{property.uf}}</p>
+  </div>
+</div>
+

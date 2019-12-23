@@ -1,0 +1,124 @@
+<div class="overlay">
+  <div id="background-img" [style.backgroundImage]="'url('+ './assets/images/principal.jpg' +')'"  alt="Background"></div>
+</div>
+
+
+
+<section class="home">
+  <div class="container">
+    <app-search-bar></app-search-bar>
+
+    <!--Loading image start-->
+    <div *ngIf="loading" class="row" style="height: 100%; width: 100%">
+      <div style="margin: auto;" class="text-center">
+        <p><img style="width: 50px; margin: 0 auto;" [src]="'assets/images/loading.gif'">Cargando Información..</p>
+      </div>
+    </div>
+    <!--Loading image end-->
+
+    <div *ngIf="!loading">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1 style="margin: 35px 0;">PROPIEDADES</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-12" *ngFor="let property of properties">
+          <app-property-card [property]="property"></app-property-card>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 text-right">
+          <a routerLink="propiedades"><b>+ VER MÁS</b></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1 style="margin: 35px 0 5px 0;">Tu lugar favorito lo encuentras junto a nosotros</h1>
+          <p>
+            Busca la propiedad de tus sueños
+          </p>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5" (click)="navigateToProperties('2')">
+        <span class="places-span">Departamentos</span>
+        <img style="height: 100%" class="images"
+             [src]="'assets/images/departamentos.jpg'" alt="Departamentos">
+      </div>
+      <div class="col-md-7">
+        <div class="row">
+          <div class="col-md-6" (click)="navigateToProperties('1')" >
+            <span class="places-span">Casas</span>
+            <img class="images" height="265" [src]="'assets/images/casas.jpg'"
+                 alt="Casas">
+          </div>
+          <div class="col-md-6" (click)="navigateToProperties('10')" >
+            <span class="places-span">Terrenos</span>
+            <img class="images" height="265" [src]="'assets/images/terrenos.jpg'"
+                 alt="Terrenos">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6" (click)="navigateToProperties('8')">
+            <span class="places-span">Parcelas</span>
+            <img class="images" height="265" [src]="'assets/images/parcelas.jpg'"
+                 alt="Parcelas">
+          </div>
+          <div class="col-md-6" (click)="navigateToProperties('5')" >
+            <span class="places-span">Locales</span>
+            <img class="images" height="265" [src]="'assets/images/locales.jpg'"
+                 alt="Locales">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1 style="margin: 45px 0 35px 0; color: #00d4a1; font-weight: bold">NUESTROS SERVICIOS</h1>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <img class="section-image" id="services-image" [src]="'assets/images/servicios3.png'" alt="Servicios">
+      </div>
+      <div class="col-md-6 margin-bottom-50">
+        <div class="row">
+          <div class="col-md-6">
+            <i class="fa fa-home section-icon"></i>
+            <h3 class="sec-title"><a routerLink="servicios">GESTIÓN DE PROPIEDADES</a></h3>
+            <p>Gestionamos la venta o arriendo de tu propiedad.</p>
+          </div>
+          <div class="col-md-6">
+            <i class="fa fa-comment section-icon"></i>
+            <h3 class="sec-title"><a routerLink="servicios">CONSULTORÍA</a></h3>
+            <p>Te acompañamos durante todo el proceso.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <i class="fa fa-briefcase section-icon"></i>
+            <h3 class="sec-title"><a routerLink="servicios">PAÑOS INMOBILIARIOS</a></h3>
+            <p>Expertos en la compra de paños inmobiliarios.</p>
+          </div>
+          <div class="col-md-6">
+            <i class="fa fa-search section-icon"></i>
+            <h3 class="sec-title"><a routerLink="servicios">BUSCAMOS TERRENOS</a></h3>
+            <p>Buscamos terrenos bajo los requerimientos del mandante.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

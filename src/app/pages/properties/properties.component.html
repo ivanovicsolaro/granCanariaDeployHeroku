@@ -1,0 +1,57 @@
+<div class="overlay">
+  <div id="background-img-min" [style.backgroundImage]="'url('+ './assets/images/home.png' +')'"  alt="Background"></div>
+</div>
+
+
+
+<section class="properties">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="custom-breadcrumb" id="breadcrumb">
+          <span> <a routerLink="../inicio"><i class="fa fa-home"></i> Inicio</a></span>
+          <span class="text-muted"> > Propiedades</span>
+        </div>
+      </div>
+    </div>
+
+    <!--Loading image start-->
+    <div *ngIf="loading" class="row" style="height: 100%; width: 100%">
+      <div style="margin: auto;" class="text-center">
+        <p><img style="width: 50px; margin: 0 auto;" [src]="'assets/images/loading.gif'">Cargando Información..</p>
+      </div>
+    </div>
+    <!--Loading image end-->
+
+    <div class="row" *ngIf="!loading && properties.length <= 0">
+      <div class="col-md-12 text-center">
+        <h1 class="property-not-found">No se encontraron resultados</h1>
+      </div>
+    </div>
+
+    <div *ngIf="!loading && properties.length > 0">
+        <div class="row">
+          <div class="col-md-4 col-12" *ngFor="let property of properties">
+            <app-property-card [property]="property"></app-property-card>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div *ngFor="let page of pages"
+                 class="page text-center"
+                 [ngClass]="{'active': page==currentPage}"
+                 (click)="setPage(page)">
+              {{page}}
+            </div>
+            <div *ngIf="currentPage != lastPage"
+                 class="page text-center"
+                 (click)="nextPage()">
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+

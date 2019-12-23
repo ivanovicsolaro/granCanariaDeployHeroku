@@ -1,0 +1,60 @@
+<form  [formGroup]="formEmailAgent" (ngSubmit)="sendEmail()">
+        <input type="hidden" formControlName="captador">
+   
+          <input class="form-group contact-input" type="text" formControlName="nombre" placeholder="Nombre Completo" required>
+          <span class="error-span">
+              <div *ngFor="let validation of validation_messages.nombre">
+                  <div class="error" *ngIf="formEmailAgent.get('nombre').hasError(validation.type) && submited">{{validation.message}}</div>
+              </div>
+      </span>
+     
+    
+      <div class="form-group">
+          <input type="email" formControlName="email" placeholder="Email" required>
+          <span class="error-span">
+              <div *ngFor="let validation of validation_messages.email">
+                      <div class="error" *ngIf="formEmailAgent.get('email').hasError(validation.type) && submited">{{validation.message}}</div>
+                  </div>
+      </span>
+      </div>
+    
+      <div class="form-group">
+          <input type="text" formControlName="telefono" placeholder="Telefono" required>
+          <span class="error-span">
+              <div *ngFor="let validation of validation_messages.telefono">
+                      <div class="error" *ngIf="formEmailAgent.get('telefono').hasError(validation.type) && submited">{{validation.message}}</div>
+                  </div>
+      </span>
+      </div>
+    
+      <div class="form-group">
+          <textarea formControlName="mensaje" rows="5" placeholder="Denos cualquier información adicional que cree que pueda servir para asesorarlo" required></textarea>
+          <span class="error-span">
+              <div *ngFor="let validation of validation_messages.mensaje">
+                      <div class="error" *ngIf="formEmailAgent.get('mensaje').hasError(validation.type) && submited">{{validation.message}}</div>
+                  </div>
+      </span>
+      </div>
+    
+      <div class="form-group">
+          <div *ngIf="(status === 1) && submited" class="alert alert-success alert-dismissible animated fadeIn slow" role="alert">
+              {{ msj }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="cerrarMsj()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+      </div>
+    
+      <div  *ngIf="(status === 0) && submited" class="alert alert-danger alert-dismissible animated fadeIn slow" role="alert">
+              {{ msj }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="cerrarMsj()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+    
+          <button class="main-button" type="submit" name="submit-form" [disabled]="cargandoEmail">
+              <strong style="color: #fff" *ngIf="!cargandoEmail"><i class="fa fa-envelope"></i> ENVIAR</strong>
+              <p class="text-white" *ngIf="cargandoEmail"><img style="width: 30px; margin-right: 5px" src="./assets/images/loading.gif"> Enviando...</p>
+          </button>
+      </div>
+    </form>
+    

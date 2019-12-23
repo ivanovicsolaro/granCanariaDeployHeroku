@@ -1,0 +1,20 @@
+#services-image {
+  height: 300px;
+}
+
+.card {
+  border: none;
+}
+
+.card img {
+  height: 25px;
+}
+
+a {
+  color: black;
+}
+
+.sec-title a:hover {
+  color: #00d4a1 !important;
+  text-decoration: none;
+}

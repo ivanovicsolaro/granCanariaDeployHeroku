@@ -1,0 +1,26 @@
+<div class="overlay">
+  <div id="background-img-min" [style.backgroundImage]="'url('+ './assets/images/home.png' +')'"  alt="Background"></div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="custom-breadcrumb">
+        <span> <a routerLink="../inicio"><i class="fa fa-home"></i> Inicio</a></span>
+        <span class="text-muted"> > Contacto</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="contact-us">
+    <div class="row">
+      <div class="col-md-6">
+        <img class="section-image" id="contact-us-image" [src]="'assets/images/contactanos.png'" alt="Contáctanos">
+      </div>
+      <div class="col-md-6">
+        <app-form-email></app-form-email>    
+      </div>
+    </div>
+  </section>
+</div>

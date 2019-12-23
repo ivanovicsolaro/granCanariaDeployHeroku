@@ -1,0 +1,280 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/font-awesome/css/font-awesome.css";
+
+.header {
+  position: absolute;
+  color: #ffffff;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.header a {
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.navbar {
+  z-index: 99999999;
+}
+
+.custom-navbar {
+  background: transparent;
+  color: #ffffff !important;
+  position: absolute;
+  width: 100%;
+}
+
+.custom-navbar .navbar-nav li a {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+.custom-navbar img {
+  width: 280px;
+  height: 100px;
+  padding: 5px 10px;
+  margin: 40px 0;
+}
+
+.sticky-navbar {
+  background: #fffefe !important;
+  box-shadow: 0 0 10px #333;
+  position: fixed;
+  z-index: 999999999999999999999999;
+}
+
+.sticky-navbar img {
+  margin: 0 !important;
+}
+
+.sticky-navbar .navbar-nav li a {
+  color: #333333 !important;
+  font-weight: bold;
+}
+
+@media (max-width: 991px) {
+  .custom-navbar {
+    background: #fffefe;
+  }
+
+  .custom-navbar .navbar-nav li a {
+    color: #333333 !important;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 500px) {
+  .custom-navbar img {
+    width: 215px;
+    height: 85px;
+    padding: 5px;
+    margin: 10px 0;
+  }
+}
+
+.slider-text {
+  position: absolute;
+  z-index: 1028;
+  background: transparent;
+  top: 35%;
+  padding: 0 55px;
+}
+
+.slider-text p {
+  text-align: center;
+  font-size: 35px;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .slider-text p {
+    font-size: 25px;
+  }
+}
+
+#background-img {
+  width: 100% !important;
+  height: 100vh;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  object-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#background-img-min {
+  width: 100% !important;
+  height: 60vh;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  object-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.main-button {
+  background: #00D4A1;
+  color: white;
+  font-weight: bold;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 3px;
+}
+
+.our-services-button {
+  background: #00D4A1;
+  color: white;
+  font-weight: bold;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 15px;
+}
+
+h1 {
+  font-size: 1.4em !important;
+}
+
+.our-services-subtitle {
+  font-weight: bold;
+}
+
+.custom-breadcrumb {
+  font-size: 0.8em;
+  margin: 25px 0;
+  color: black !important;
+}
+
+.custom-breadcrumb a {
+  color: black;
+}
+
+.custom-breadcrumb a i {
+  color: black !important;
+}
+
+.img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.section-image {
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 0 20px gray;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.3em;
+  margin: 15px 0;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: block !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    float: right !important;
+  }
+}
+
+.images {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  padding: 10px 0;
+}
+
+.section-icon {
+  color: #00d4a1;
+  font-size: 40px;
+  margin-top: 5px;
+}
+
+.places-span {
+  font-size: 21px;
+  color: #fff;
+  position: absolute;
+  margin: 20px;
+  font-weight: bold;
+  cursor: pointer !important;
+}
+
+.sec-title {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.margin-bottom-50 {
+  margin-bottom: 50px;
+}
+
+.navbar-light .navbar-toggler {
+  color: rgba(0, 0, 0, .5);
+  border-color: rgba(0, 0, 0, .1);
+  background: #00d4a1;
+}
+
+@media (max-width: 991px) {
+  .header {
+    display: none;
+  }
+}
+
+.footer-logo {
+  width: 245px;
+  margin: 20px 0;
+}
+
+footer {
+  margin-top: 30px;
+}
+
+footer h5 {
+  margin: 20px 0 10px 0;
+}
+
+footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+footer ul li {
+  margin: 5px 0;
+}
+
+.custom-pagination {
+  text-align: center;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.property-not-found {
+  font-size: 2em !important;
+  padding: 60px;
+}
+
+
+ngx-gallery{
+  position: relative;
+  z-index: 999999999999999999999999999999999;
+}
+
+ngx-gallery-layout thumbnails-bottom {
+  position: r;
+  z-index: -1 !important;
+}

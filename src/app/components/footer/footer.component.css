@@ -1,0 +1,13 @@
+.footer {
+  background: black;
+  color: white;
+  padding: 0;
+}
+
+.footer a {
+  color: white;
+}
+
+.container-fluid {
+  padding: 0;
+}
